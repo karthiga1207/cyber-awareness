@@ -1,0 +1,256 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSafe | Cybersecurity Awareness &amp; Threat Education</title>
+  <meta name="description" content="Learn how scams and cyber threats work, practise spotting them, and check your own password strength.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./frontend/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="CyberSafe home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        CyberSafe
+      </a>
+
+      <nav class="nav-links" aria-label="Main">
+        <a href="#threats">Learn</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#tools">Tools</a>
+        <a href="#help">Get help</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#login">Log in</a>
+        <a class="btn btn-primary" href="#register">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <h1>Would you fall for this message?</h1>
+        <p class="lead">Scammers rely on people rushing. Learn the tricks they use, practise spotting them, and check how strong your own passwords are. It is free and takes minutes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#threats">Start learning</a>
+          <a class="btn btn-ghost btn-lg" href="#tools">Try the tools</a>
+        </div>
+      </div>
+
+      <div class="hero-stage">
+        <div class="phone" aria-live="polite">
+          <div class="phone-top">
+            <span class="sender" id="sender">VM-BKKYC</span>
+            <span class="score-pill" id="score">0 of 3 correct</span>
+          </div>
+
+          <div class="bubble" id="bubble"><p id="msg"></p></div>
+
+          <div id="answers">
+            <p class="ask">Is this phishing or safe?</p>
+            <div class="answer-row">
+              <button class="ans ans-phish" data-answer="phish" type="button">Phishing</button>
+              <button class="ans ans-safe" data-answer="safe" type="button">Looks safe</button>
+            </div>
+          </div>
+
+          <div class="result" id="result" hidden>
+            <p class="verdict" id="verdict"></p>
+            <ul class="flags" id="flags"></ul>
+            <button class="btn btn-primary btn-block" id="next" type="button">Next message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- ============ HOME MODULES ============ -->
+    <section class="section wrap modules" id="modules">
+      <div class="section-head">
+        <h2>Pick a module</h2>
+        <p>Choose where you want to start.</p>
+      </div>
+      <div class="module-grid">
+        <a class="module" href="#threats">
+          <h3>Learn</h3>
+          <p>Six lessons on the most common cyber threats.</p>
+        </a>
+        <a class="module"  href="#quiz">
+          <h3>Quiz</h3>
+          <p>Test yourself and get your awareness level.</p>
+        </a>
+        <a class="module" href="#tools">
+          <h3>Tools</h3>
+          <p>Check a password and practise spotting scams.</p>
+        </a>
+        <a class="module" href="#help">
+          <h3>Get help</h3>
+          <p>What to do if you have been scammed.</p>
+        </a>
+      </div>
+    </section>
+    <!-- ============ THREATS ============ -->
+    <section class="section wrap" id="threats">
+      <div class="section-head">
+        <h2>Know the threats before they find you</h2>
+        <p>Each lesson explains what the attack is, shows a real-life example, and ends with how to spot and stop it.</p>
+      </div>
+
+      <div class="threat-grid">
+
+        <article class="threat t-phish feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <h3>Phishing</h3>
+          <p>Fake emails, SMS and calls that trick you into sharing passwords, OTPs or card details. Most of them give themselves away if you know where to look.</p>
+          <ul class="mini-flags">
+            <li>A deadline that pushes you to act now</li>
+            <li>A sender or link that only looks like the real one</li>
+            <li>A request to log in or "verify" through a link</li>
+          </ul>
+          <a class="read" href="#lesson/phishing">Read the lesson</a>
+        </article>
+
+        <article class="threat t-upi">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h10M7 9h10M8 5c4 0 6 1.5 6 4s-2 4-6 4H7l8 6"/></svg></span>
+          <h3>UPI and online fraud</h3>
+          <p>Collect requests disguised as refunds, fake customer care numbers and QR code scams. You never need to enter your PIN to receive money.</p>
+          <a class="read" href="#lesson/upi-fraud">Read the lesson</a>
+        </article>
+
+        <article class="threat t-malware">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h8v6a4 4 0 0 1-8 0V8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2M4 12h4M16 12h4M5 6l3 2M19 6l-3 2M5 19l3-2M19 19l-3-2"/></svg></span>
+          <h3>Malware</h3>
+          <p>Software that steals data or spies on you, often hidden inside cracked apps and unknown downloads.</p>
+          <a class="read" href="#lesson/malware">Read the lesson</a>
+        </article>
+
+        <article class="threat t-password">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/></svg></span>
+          <h3>Password attacks</h3>
+          <p>How guessing, leaked passwords and reused logins lead to stolen accounts, and how to stop them.</p>
+          <a class="read" href="#lesson/password-attacks">Read the lesson</a>
+        </article>
+
+        <article class="threat t-ransom">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+          <h3>Ransomware</h3>
+          <p>Malware that locks your files and demands payment. Backups are your best defence.</p>
+          <a class="read" href="#lesson/ransomware">Read the lesson</a>
+        </article>
+
+        <article class="threat t-wifi">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
+          <h3>Public Wi-Fi risks</h3>
+          <p>Open networks in cafés, stations and campuses can be watched or copied by attackers. Learn what is safe to do on them and what to save for later.</p>
+          <a class="read" href="#lesson/public-wifi">Read the lesson</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section wrap" id="how">
+      <div class="section-head">
+        <h2>Three steps to a safer you</h2>
+        <p>Follow the path in order, or jump straight to the quiz if you already know the basics.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>Learn</h3>
+          <p>Short lessons with real examples, red flags and prevention tips for each threat.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>Practise</h3>
+          <p>Take a quiz after each topic and read why every answer is right or wrong.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Get your level</h3>
+          <p>Finish with a Cyber Awareness Level: Beginner, Intermediate or Aware.</p>
+        </li>
+      </ol>
+
+      <a class="btn btn-primary btn-lg steps-cta" href="#quiz">Take the quiz</a>
+    </section>
+
+        <!-- ============ TOOLS ============ -->
+    <section class="tools" id="tools">
+      <div class="wrap tools-grid">
+
+        <div class="pw-card">
+          <h2>Check a password</h2>
+          <p class="pw-note">Type any password to see how strong it is. Everything runs in your browser. Nothing is sent or saved.</p>
+
+          <label class="sr-only" for="pw">Password to check</label>
+          <div class="pw-field">
+            <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="Type a password to test">
+            <button class="pw-toggle" id="pwToggle" type="button" aria-pressed="false">Show</button>
+          </div>
+
+          <div class="meter" id="meter" data-level="0" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <p class="meter-label" id="meterLabel" aria-live="polite">Start typing to see your result.</p>
+
+          <ul class="checklist" id="checklist">
+            <li data-rule="len">12 or more characters</li>
+            <li data-rule="case">Upper and lower case letters</li>
+            <li data-rule="num">At least one number</li>
+            <li data-rule="sym">At least one symbol</li>
+          </ul>
+        </div>
+
+        <div class="url-card">
+          <h2>Check a link</h2>
+          <p class="pw-note">Paste a link you received and see the warning signs. The link is never opened, sent or saved.</p>
+
+          <label class="sr-only" for="urlInput">Link to check</label>
+          <input class="url-input" id="urlInput" type="text" autocomplete="off" spellcheck="false" placeholder="Try http://kyc-update-bank.xyz/login">
+          <button class="btn btn-primary" id="urlCheck" type="button">Check this link</button>
+
+          <div class="url-result" id="urlResult" aria-live="polite" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ HELP ============ -->
+    <section class="wrap section" id="help">
+      <div class="help">
+        <div>
+          <h2>Already been scammed? Act fast.</h2>
+          <p>Call the national cyber crime helpline <strong>1930</strong> as soon as you can. Then file a report online. Quick action gives you the best chance of stopping the money.</p>
+        </div>
+        <a class="btn btn-dark btn-lg" href="https://cybercrime.gov.in" target="_blank" rel="noopener">Report at cybercrime.gov.in</a>
+      </div>
+    </section>
+        <!-- ============ QUIZ ============ -->
+    <section class="section wrap" id="quiz" hidden></section>
+        <!-- ============ ACCOUNT ============ -->
+    <section class="section wrap" id="account" hidden></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>CyberSafe is a cybersecurity awareness and threat education system, built as a mini project.</p>
+    </div>
+  </footer>
+  <script src="frontend/lessons.js"></script>
+  <script src="frontend/account.js"></script>
+  <script src="frontend/quiz.js"></script>
+  <script src="frontend/linkcheck.js"></script>
+  <script src="frontend/script.js"></script>
+</body>
+</html>
