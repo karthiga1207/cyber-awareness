@@ -244,9 +244,21 @@ lessonSection.className = 'section wrap lesson';
 lessonSection.hidden = true;
 document.querySelector('main').appendChild(lessonSection);
 
-/* Point every "Read the lesson" link to the lesson page */
+/* Keep lesson links as hash routes.
+   The lesson cards already use #lesson/<topic>. The old code tried to
+   read the topic from URL query parameters (?topic=...), which meant
+   topic became null and every lesson link navigated back to home. */
 document.querySelectorAll('a.read').forEach((link) => {
-  const topic = new URL(link.href).searchParams.get('topic');
+  const href = link.getAttribute('href') || '';
+  const topic = href.startsWith('#lesson/') ? href.slice('#lesson/'.length) : '';
+
+  if (!topic || !lessons[topic]) {
+    link.setAttribute('aria-disabled', 'true');
+    link.addEventListener('click', (event) => event.preventDefault());
+    return;
+  }
+
+  /* Explicitly preserve the working hash route. */
   link.setAttribute('href', '#lesson/' + topic);
 });
 
