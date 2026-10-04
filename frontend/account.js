@@ -3,7 +3,7 @@
    Talks to the backend at API (change it if your port differs)
    ========================================================= */
 
-const API = 'http://localhost:5000/api';
+const API = 'https://cyber-awareness-t3wu.onrender.com/api';
 
 const accountSection = document.getElementById('account');
 const navCta = document.querySelector('.nav-cta');
